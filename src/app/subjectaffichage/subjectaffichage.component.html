@@ -1,0 +1,33 @@
+<body>
+  <div class="container">
+  
+      <label for="classId">Class ID:</label>
+      <input type="text" id="classId" [(ngModel)]="classId" required>
+      <button type="submit" (click)="getSubjectsByClassId()">Get Subjects By Class ID</button>
+    
+ 
+
+    <div *ngIf="subjects && subjects.length > 0">
+      <h3>Subjects:</h3>
+      <table >
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Title</th>
+            <!-- Add more headers as needed -->
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let subject of subjects">
+            <td>{{ subject.idSubject }}</td>
+            <td>{{ subject.title }}</td>
+            <!-- Add more cells for other properties -->
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  
+  
+  
+  </body>
